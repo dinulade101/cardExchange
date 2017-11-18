@@ -1,14 +1,34 @@
 page-home {
-  background-image: url("../assets/imgs/pexels-photo-378442.jpeg");
-  background-size: cover;
-  background-position: cetner center;
-  background-repeat: no-repeat;
+
 }
 .coverImg{
   top:0;
   width:100%;
-  height:20%;
+  height:30%;
+}
+.profilePic{
+  left: auto;
+  right: auto;
+  margin-top:-75px;
+  width: 110px;
+  height: 110px;
+  border-radius: 55px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../assets/imgs/profielPic.jpg");
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 .headerCover{
-  
+  background-image: url("../assets/imgs/pexels-photo-378442.jpeg");
+  background-size: cover;
+  background-position: cetner center;
+  background-repeat: no-repeat;
+  height:30%;
+}
+.contentSlides{
+  margin-top: -75px;
 }
