@@ -9,7 +9,8 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchPage } from '../pages/launch/launch';
-import { PreferencesPage } from '../pages/preferences/preferences'
+import { PreferencesPage } from '../pages/preferences/preferences';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PreferencesPage } from '../pages/preferences/preferences'
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
