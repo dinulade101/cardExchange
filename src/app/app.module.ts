@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchPage } from '../pages/launch/launch';
 import { PreferencesPage } from '../pages/preferences/preferences';
 import { Camera } from '@ionic-native/camera';
+import { NFC, Ndef } from '@ionic-native/nfc';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { Camera } from '@ionic-native/camera';
     StatusBar,
     SplashScreen,
     Camera,
+    Ndef,
+    NFC,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
