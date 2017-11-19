@@ -38,8 +38,8 @@ export class HomePage {
       console.log('received ndef message. the tag contains: ', event.tag);
       console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));
 
-      let message = this.ndef.textRecord('Hello world');
-      this.nfc.share([message]).then(onSuccess).catch(onError);
+      // let message = this.ndef.textRecord('Hello world');
+      // this.nfc.share([message]).then(onSuccess).catch(onError);
     });
   }
 }
