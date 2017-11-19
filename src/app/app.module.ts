@@ -14,6 +14,8 @@ import { AppPreferences } from '@ionic-native/app-preferences';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FirebaseProvider } from '../providers/firebase/firebase';
+import { Camera } from '@ionic-native/camera';
+import { NFC, Ndef } from '@ionic-native/nfc';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDSoOiB3gKwe0W9RPqBaI-jBkxW85n99FE",
@@ -47,6 +49,9 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
+    NFC,
+    Ndef,
     AppPreferences,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider
