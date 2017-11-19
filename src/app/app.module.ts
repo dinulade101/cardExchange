@@ -15,6 +15,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { Camera } from '@ionic-native/camera';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 
 export const firebaseConfig = {
@@ -52,6 +53,7 @@ export const firebaseConfig = {
     Camera,
     AppPreferences,
     FirebaseProvider,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })

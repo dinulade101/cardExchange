@@ -19,7 +19,7 @@ export class HomePage {
   writingTag:   boolean   = false;
   isWriting:    boolean   = false;
   ndefMsg:      string    = '';
-  subscriptions: Array<Subscription> = new Array<Subscription>();
+//  subscriptions: Array<Subscription> = new Array<Subscription>();
 
 
   constructor(
