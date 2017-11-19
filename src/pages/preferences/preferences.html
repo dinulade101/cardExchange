@@ -17,9 +17,16 @@
   <ion-list>
 
     <ion-item>
-      <ion-label>Social Media</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
+    <ion-label>Social Media</ion-label>
+    <ion-select [(ngModel)]="gaming">
+      <ion-option value="nes">Twitter</ion-option>
+      <ion-option value="n64">Facebook</ion-option>
+      <ion-option value="ps">Snapchat</ion-option>
+      <ion-option value="genesis">Instagram</ion-option>
+      <ion-option value="saturn">VSCO</ion-option>
+    </ion-select>
+  </ion-item>
+
 
     <ion-item>
       <ion-label>Username</ion-label>
