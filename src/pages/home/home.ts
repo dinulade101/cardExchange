@@ -28,7 +28,6 @@ export class HomePage {
   buisnessKey;
   userSocialProfile;
   usersBuisnessProfile;
-//  subscriptions: Array<Subscription> = new Array<Subscription>();
 
 
   constructor(
@@ -36,9 +35,6 @@ export class HomePage {
     private camera: Camera, private nfc: NFC, private ndef: Ndef, private storage: Storage, public firebaseProvider: FirebaseProvider) {
       storage.get('socialKey').then((val) => {
         this.socialKey = val;
-        /*this.firebaseProvider.getUserSocialByID(this.socialKey).subscribe(x=>{
-        //  this.userProfileInfoSocial = x;
-      });*/
       this.userProfileInfoSocialLocal = this.firebaseProvider.getUserSocialByID(this.socialKey);
 
       });
@@ -48,13 +44,26 @@ export class HomePage {
 
         this.firebaseProvider.getUserBusinessByID(this.buisnessKey).subscribe(x=>{
           this.usersBuisnessProfile = x;
-          //this.userProfileInfoBuisnessLocal = this.usersBuisnessProfile;
           console.log(this.usersBuisnessProfile);
         });
-        //this.userProfileInfoBuisnessLocal =
       });
+    }
 
-
+    sendData() {
+      var message = [
+        this.ndef.textRecord("hello, world")
+      ];
+      this.nfc.share(message);
+    }
+    receiveData() {
+      this.nfc.addNdefListener(() => {
+        console.log('successfully attached ndef listener');
+      }, (err) => {
+        console.log('error attaching ndef listener', err);
+      }).subscribe((event) => {
+        console.log('received ndef message. the tag contains: ', event.tag);
+        console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));
+      });
     }
 
     getImage() {
@@ -63,18 +72,6 @@ export class HomePage {
         destinationType: this.camera.DestinationType.FILE_URI,
         sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
       }
-
-      this.nfc.addNdefListener(() => {
-        console.log('successfully attached ndef listener');
-      }, (err) => {
-        console.log('error attaching ndef listener', err);
-      }).subscribe((event) => {
-        console.log('received ndef message. the tag contains: ', event.tag);
-        console.log('decoded tag id', this.nfc.bytesToHexString(event.tag.id));
-
-        let message = this.ndef.textRecord('Hello world');
-        //this.nfc.share([message]).then(onSuccess).catch(onError);
-      });
 
       this.camera.getPicture(options).then((imageData) => {
         this.imageURI = imageData;
