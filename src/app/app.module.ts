@@ -50,11 +50,11 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     Camera,
+    AppPreferences,
+    FirebaseProvider,
     NFC,
     Ndef,
-    AppPreferences,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FirebaseProvider
   ]
 })
 export class AppModule {}

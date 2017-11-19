@@ -23,7 +23,7 @@ export class FirebaseProvider {
   }
   //hint use the unique ID from firebase
   addUserSocial(name: string){
-    let key = this.afd.list('/usersBusiness/').push({
+    let key = this.afd.list('/usersSocial/').push({
       name: name
     }).key;
     return key;
@@ -35,12 +35,21 @@ export class FirebaseProvider {
     }).key;
     return key;
   }
-  /*
-  addUserSocial(name: string){
-    this.afd.list('/usersBuisness/'+uniqueID).set({
-      name: name
-    });
+
+  addSocialTwitter(key: string, twitterID: string){
+    this.afd.object('/usersSocial/'+key+'/twitter').set(twitterID).then(_ => console.log('set twitter'));
   }
-  */
+  addSocialSnapchat(key: string, snapchatID: string){
+    this.afd.object('/usersSocial/'+key+'/snapchat').set(snapchatID).then(_ => console.log('set snapchat'));
+  }
+  addSocialInstagram(key: string, instagramID: string){
+    this.afd.object('/usersSocial/'+key+'/instagram').set(instagramID).then(_ => console.log('set instagram'));
+  }
+  addSocialfb(key: string, fbID: string){
+    this.afd.object('/usersSocial/'+key+'/fb').set(fbID).then(_ => console.log('set fb'));
+  }
+  addSocialVSCO(key: string, vscoID: string){
+    this.afd.object('/usersSocial/'+key+'/vsco').set(vscoID).then(_ => console.log('set vsco'));
+  }
 
 }

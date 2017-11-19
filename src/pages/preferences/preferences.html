@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Preferences</ion-title>
+    <ion-title>Add Account</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,24 +18,24 @@
 
     <ion-item>
     <ion-label>Social Media</ion-label>
-    <ion-select [(ngModel)]="gaming">
-      <ion-option value="nes">Twitter</ion-option>
-      <ion-option value="n64">Facebook</ion-option>
-      <ion-option value="ps">Snapchat</ion-option>
-      <ion-option value="genesis">Instagram</ion-option>
-      <ion-option value="saturn">VSCO</ion-option>
+    <ion-select [(ngModel)]="socialAcc">
+      <ion-option value = "twitter">Twitter</ion-option>
+      <ion-option value = "fb">Facebook</ion-option>
+      <ion-option value = "sc">Snapchat</ion-option>
+      <ion-option value = "ig">Instagram</ion-option>
+      <ion-option value = "vsco">VSCO</ion-option>
     </ion-select>
   </ion-item>
 
 
     <ion-item>
       <ion-label>Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" value="" [(ngModel)]="usrname"></ion-input>
     </ion-item>
 
   </ion-list>
 
   <div padding>
-    <button style="text-align:center" ion-button>Add Account</button>
+    <button style="text-align:center" ion-button (click)="addAccount()">Add Account</button>
   </div>
 </ion-content>

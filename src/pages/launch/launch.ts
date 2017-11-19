@@ -19,8 +19,8 @@ import { FirebaseProvider } from './../../providers/firebase/firebase';
 export class LaunchPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
-    //let socialKey = this.firebaseProvider.addUserSocial("Dinula De Silva");
-    //let buisnessKey = this.firebaseProvider.addUserBusiness("Dinula De Silva");
+    let socialKey = this.firebaseProvider.addUserSocial("Dinula De Silva");
+    let buisnessKey = this.firebaseProvider.addUserBusiness("Dinula De Silva");
     //console.log(socialKey);
     //console.log(buisnessKey);
   }
