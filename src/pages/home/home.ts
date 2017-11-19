@@ -20,7 +20,9 @@ export class HomePage {
   imageURI:any;
   imageFileName:any;
   userProfileInfoSocial: FirebaseListObservable<any[]>;
+  userProfileInfoSocialLocal;
   userProfileInfoBuisness: FirebaseListObservable<any[]>;
+  userProfileInfoBuisnessLocal;
   readingTag:   boolean   = false;
   writingTag:   boolean   = false;
   isWriting:    boolean   = false;
@@ -38,19 +40,22 @@ export class HomePage {
     private camera: Camera, private storage: Storage, public firebaseProvider: FirebaseProvider) {
       storage.get('socialKey').then((val) => {
         this.socialKey = val;
-        this.firebaseProvider.getUserSocialByID(this.socialKey).subscribe(x=>{
+        /*this.firebaseProvider.getUserSocialByID(this.socialKey).subscribe(x=>{
         //  this.userProfileInfoSocial = x;
-        });
+      });*/
+      userProfileInfoSocialLocal = this.firebaseProvider.getUserSocialByID(this.socialKey);
 
       });
       storage.get('buisnessKey').then((val) => {
         this.buisnessKey = val;
         console.log(this.buisnessKey);
 
-        this.firebaseProvider.getUserBusinessByID(this.buisnessKey).subscribe(x=>{
+        /*this.firebaseProvider.getUserBusinessByID(this.buisnessKey).subscribe(x=>{
           this.usersBuisnessProfile = x;
+          this.userProfileInfoBuisnessLocal = this.usersBuisnessProfile[0];
           console.log(this.usersBuisnessProfile);
-        });
+        });*/
+        this.userProfileInfoBuisnessLocal = this.firebaseProvider.getUserBusinessByID(this.buisnessKey);
       });
 
 
