@@ -19,7 +19,7 @@ export class FirebaseProvider {
     return this.afd.list('/users/');
   }
   getUserBusinessByID(uniqueID: string){
-    return this.afd.object('/usersBusiness/'+uniqueID);
+    return this.afd.list('/usersBusiness/'+uniqueID);
   }
   getUserSocialByID(uniqueID: string){
     return this.afd.list('/usersSocial/'+uniqueID);

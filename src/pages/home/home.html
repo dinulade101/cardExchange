@@ -8,8 +8,11 @@
   </div>
   <div class="contentSlides">
     <ion-slides class="">
-      <ion-slide *ngFor="let item of userProfileInfoSocialLocal">
-        <div style="text-align:center"><h1>{{item.name}}</h1></div>
+      <ion-slide>
+        <div style="text-align:center" ><h1></h1></div>
+        <ion-item *ngFor="let item of usersBuisnessProfile" style="text-color:black;">
+          <h1>{{item.name}}</h1>
+        </ion-item>
         <p>Hi I am Ahmed this is my first hackathon i am trying to make a bio for this app</p>
         <ion-item>
     <p>{{imageURI}}</p>
