@@ -15,7 +15,11 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { Camera } from '@ionic-native/camera';
+import { NativeStorage } from '@ionic-native/native-storage';
+import { IonicStorageModule } from '@ionic/storage';
 import { NFC, Ndef } from '@ionic-native/nfc';
+
+
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDSoOiB3gKwe0W9RPqBaI-jBkxW85n99FE",
@@ -36,7 +40,8 @@ export const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,6 +59,7 @@ export const firebaseConfig = {
     FirebaseProvider,
     NFC,
     Ndef,
+    NativeStorage,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })

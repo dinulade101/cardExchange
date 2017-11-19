@@ -18,8 +18,11 @@ export class FirebaseProvider {
   getAllUsers(){
     return this.afd.list('/users/');
   }
-  getUserByID(uniqueID: string){
-    return this.afd.list('/users/'+uniqueID);
+  getUserBusinessByID(uniqueID: string){
+    return this.afd.list('/usersBusiness/'+uniqueID);
+  }
+  getUserSocialByID(uniqueID: string){
+    return this.afd.list('/usersSocial/'+uniqueID);
   }
   //hint use the unique ID from firebase
   addUserSocial(name: string){
