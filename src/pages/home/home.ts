@@ -10,7 +10,8 @@ import { AppPreferences } from '@ionic-native/app-preferences';
 export class HomePage {
 
   constructor(public navCtrl: NavController, private appPreferences: AppPreferences) {
-
+    this.appPreferences.fetch('key').then
   }
+
 
 }

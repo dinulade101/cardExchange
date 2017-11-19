@@ -11,10 +11,36 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class FirebaseProvider {
 
-  constructor(public http: HttpClient) {
+  constructor(public afd: AngularFireDatabase) {
     console.log('Hello FirebaseProvider Provider');
   }
 
-  
+  getAllUsers(){
+    return this.afd.list('/users/');
+  }
+  getUserByID(uniqueID: string){
+    return this.afd.list('/users/'+uniqueID);
+  }
+  //hint use the unique ID from firebase
+  addUserSocial(name: string){
+    let key = this.afd.list('/usersBusiness/').push({
+      name: name
+    }).key;
+    return key;
+  }
+
+  addUserBusiness(name: string){
+    let key = this.afd.list('/usersBusiness/').push({
+      name: name
+    }).key;
+    return key;
+  }
+  /*
+  addUserSocial(name: string){
+    this.afd.list('/usersBuisness/'+uniqueID).set({
+      name: name
+    });
+  }
+  */
 
 }

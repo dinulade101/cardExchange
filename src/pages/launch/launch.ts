@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { HomePage } from '../home/home';
-import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 
 /**
  * Generated class for the LaunchPage page.
@@ -17,8 +17,12 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
   templateUrl: 'launch.html',
 })
 export class LaunchPage {
-  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseProvider: FirebaseProvider) {
+    //let socialKey = this.firebaseProvider.addUserSocial("Dinula De Silva");
+    //let buisnessKey = this.firebaseProvider.addUserBusiness("Dinula De Silva");
+    //console.log(socialKey);
+    //console.log(buisnessKey);
   }
 
   ionViewDidLoad() {
