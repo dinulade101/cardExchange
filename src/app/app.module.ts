@@ -10,6 +10,17 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LaunchPage } from '../pages/launch/launch';
 import { PreferencesPage } from '../pages/preferences/preferences'
+import { AppPreferences } from '@ionic-native/app-preferences';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { FirebaseProvider } from '../providers/firebase/firebase';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyDSoOiB3gKwe0W9RPqBaI-jBkxW85n99FE",
+  authDomain: "cardexchange-d080b.firebaseapp.com",
+  databaseURL: "https://cardexchange-d080b.firebaseio.com",
+  storageBucket: "cardexchange-d080b.appspot.com",
+};
 
 @NgModule({
   declarations: [
@@ -22,6 +33,8 @@ import { PreferencesPage } from '../pages/preferences/preferences'
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -34,7 +47,9 @@ import { PreferencesPage } from '../pages/preferences/preferences'
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    AppPreferences,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    FirebaseProvider
   ]
 })
 export class AppModule {}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 //import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { HomePage } from '../home/home';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 /**
  * Generated class for the LaunchPage page.
@@ -16,7 +17,7 @@ import { HomePage } from '../home/home';
   templateUrl: 'launch.html',
 })
 export class LaunchPage {
-
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

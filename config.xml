@@ -79,6 +79,7 @@
     <allow-navigation href="http://192.168.243.112:8100" />
     <allow-navigation href="http://192.168.244.161:8100" />
     <engine name="android" spec="^6.2.3" />
+    <plugin name="cordova-plugin-app-preferences" spec="^0.99.3" />
     <plugin name="cordova-plugin-camera" spec="^2.4.1" />
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
     <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
