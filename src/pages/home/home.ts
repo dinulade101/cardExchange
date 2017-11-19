@@ -50,11 +50,12 @@ export class HomePage {
     }
 
     sendData() {
-      var message = [
-        this.ndef.textRecord("hello, world")
-      ];
-      this.nfc.share(message);
-    }
+      let message = this.ndef.textRecord('Hello world');
+      this.nfc.share([message]);
+      console.log('successfuly sent message');
+      }
+
+
     receiveData() {
       this.nfc.addNdefListener(() => {
         console.log('successfully attached ndef listener');
@@ -79,4 +80,4 @@ export class HomePage {
         console.log(err);
       });
     }
-  }
+}
