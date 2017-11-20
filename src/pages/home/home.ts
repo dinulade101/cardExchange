@@ -50,7 +50,7 @@ export class HomePage {
     }
 
     sendData() {
-      let message = this.ndef.textRecord('Hello world');
+      let message = this.ndef.textRecord(socialKey);
       this.nfc.share([message]);
       console.log('successfuly sent message');
       }
